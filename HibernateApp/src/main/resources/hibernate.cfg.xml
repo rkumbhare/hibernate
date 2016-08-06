@@ -3,7 +3,7 @@
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory name="sessioFactory">
+    <session-factory >
     	<property name="connection.driver_class">org.postgresql.Driver</property>
     	<property name="connection.url">jdbc:postgresql://localhost/postgres</property>
     	<property name="connection.username">postgres</property>
