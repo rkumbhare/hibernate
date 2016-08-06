@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="sessioFactory">
+    	<property name="connection.driver_class">org.postgresql.Driver</property>
+    	<property name="connection.url">jdbc:postgresql://localhost/postgres</property>
+    	<property name="connection.username">postgres</property>
+    	<property name="connection.password">postgres</property>
+    	<property name="connection.pool_size">1</property>
+    	<property name="connection.autocommit">false</property>
+    	
+    	<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    	
+    	<property name="hbm2ddl.auto">create</property>
+    	
+    	<property name="show_sql">true</property>
+    	<property name="format_sql">true</property>
+    	
+    	<property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+    	
+    	<mapping class="com.rkumbhare.app.domain.entity.User"/>
+    	
+    </session-factory>
+</hibernate-configuration>
