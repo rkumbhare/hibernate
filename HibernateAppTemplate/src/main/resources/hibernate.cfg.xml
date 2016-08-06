@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- database connection  -->
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url">jdbc:postgresql://localhost/postgres</property>
+		<property name="connection.username">postgres</property>
+		<property name="connection.password">postgres</property>
+		<property name="connection.pool.size">1</property>
+		
+		<!-- dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		
+		<!-- new schema creation -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		
+		<!-- sql  -->
+		<property name="show_seq">true</property>
+		<property name="format_sql">true</property>
+		
+		<!-- Entities -->
+		<mapping class="com.rkumbhare.domain.entity.Person" />
+				
+	</session-factory>
+</hibernate-configuration>
