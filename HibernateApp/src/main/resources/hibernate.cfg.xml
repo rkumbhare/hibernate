@@ -21,6 +21,7 @@
     	<property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
     	
     	<mapping class="com.rkumbhare.app.domain.entity.User"/>
+    	<mapping class="com.rkumbhare.app.domain.entity.UserInfo"/>
     	
     </session-factory>
 </hibernate-configuration>

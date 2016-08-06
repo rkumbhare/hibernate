@@ -5,7 +5,8 @@
 
 package com.rkumbhare.app.domain.entity;
 
-import java.util.Date;
+import java.util.Calendar;
+import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,9 +20,31 @@ public class Application {
 		session.beginTransaction();
 		
 		User user = new User();
-		user.setFirstname("Rakesh");
-		user.setLastname("kumhbhare");
-		user.setDob(new Date(1989, 07, 20));
+		user.setUsername("rakesh");
+		user.setPassword("rakesh");
+		
+		UserInfo userInfo = new UserInfo();
+		userInfo.setFirstname("rakesh");
+		userInfo.setLastname("k");
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(1989, Calendar.JULY, 20);
+		userInfo.setDob(calendar.getTime());
+		
+		Address homeAddress = new Address();
+		homeAddress.setCity("Nagpur");
+		
+		Address officeAddress = new Address();
+		officeAddress.setCity("Mumbai");
+		
+		userInfo.setHomeAddress(homeAddress);
+		userInfo.setOfficeAddress(officeAddress);
+		
+		userInfo.getContactList().add(new Contact(null, "38093489"));
+		userInfo.getContactList().add(new Contact(null, "99884774"));
+		
+		user.setUserInfo(userInfo);
+		
+		
 		
 		session.save(user);
 		

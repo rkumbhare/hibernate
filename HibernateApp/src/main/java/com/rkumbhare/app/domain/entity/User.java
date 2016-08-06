@@ -5,58 +5,57 @@
 
 package com.rkumbhare.app.domain.entity;
 
-import java.util.Date;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity(name = "User")
 @Table(name = "User", schema = "demo")
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="user_seq")
-	@SequenceGenerator(name="user_seq", sequenceName="user_seq", allocationSize=1)
-	@Column(name="user_id", nullable=false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
+	@SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1)
+	@Column(name = "user_id", nullable = false)
 	private int userId;
-	@Column(name="firstname", nullable=false)
-	private String firstname;
-	@Column(name="lastname", nullable=false)
-	private String lastname;
-	@Column(name="dob", nullable=false)
-	@Temporal(TemporalType.DATE) 
-	private Date dob;   
-	
+	@Column(name = "username", nullable = false, length = 50, unique = true)
+	private String username;
+	@Column(name = "password", nullable = false, length = 50)
+	private String password;
+	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name="user_info_id")
+	private UserInfo userInfo;
+
+	public UserInfo getUserInfo() {
+		return userInfo;
+	}
+	public void setUserInfo(UserInfo userInfo) {
+		this.userInfo = userInfo;
+	}
 	public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getUsername() {
+		return username;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getPassword() {
+		return password;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public Date getDob() {
-		return dob;
-	}
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-
 }
