@@ -18,6 +18,10 @@ import com.rkumbhare.app.domain.entity.EmployeeInfo;
 
 public class Application2 {
 
+	/**
+	 * get and load method demo
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
