@@ -23,6 +23,9 @@
     	<mapping class="com.rkumbhare.app.domain.entity.User"/>
     	<mapping class="com.rkumbhare.app.domain.entity.UserInfo"/>
     	<mapping class="com.rkumbhare.app.domain.entity.Employee"/>
+    	<mapping class="com.rkumbhare.app.domain.entity.EmployeeInfo"/>
+    	<mapping class="com.rkumbhare.app.domain.entity.EmpAddress"/>
+    	<mapping class="com.rkumbhare.app.domain.entity.EmpContact"/>
     	
     </session-factory>
 </hibernate-configuration>
