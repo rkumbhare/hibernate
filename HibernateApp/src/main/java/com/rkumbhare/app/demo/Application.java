@@ -6,7 +6,6 @@
 package com.rkumbhare.app.demo;
 
 import java.util.Calendar;
-import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
