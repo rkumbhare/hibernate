@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
 
 @Entity(name = "Employee")
 @Table(name = "employee", schema = "demo")
-public class Employee {
+public class Employee implements Cloneable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
 	@SequenceGenerator(name = "employee_seq", sequenceName = "employee_seq", allocationSize = 1)
@@ -68,5 +68,14 @@ public class Employee {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+	
+	public Employee getClone() throws CloneNotSupportedException{
+		return (Employee) clone();
+	}
+	
 
 }
