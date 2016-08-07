@@ -18,19 +18,27 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity(name = "Employee")
-@Table(name = "emplyee", schema = "demo")
+@Table(name = "employee", schema = "demo")
 public class Employee {
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="employee_seq")
-	@SequenceGenerator(name="employee_seq", sequenceName="employee_seq", allocationSize=1)
-	@Column(name="emp_id", nullable=false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
+	@SequenceGenerator(name = "employee_seq", sequenceName = "employee_seq", allocationSize = 1)
+	@Column(name = "emp_id", nullable = false)
 	private int employeeId;
-	@Column(name="doj", nullable=false)
+	@Column(name = "doj", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date doj;
-	@Column(name="designation", nullable=false, length=50)
+	@Column(name = "designation", nullable = false, length = 50)
 	private String designation;
-	
+	@Column(name = "level", nullable = true, length = 10)
+	private String level;
+
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
+	}
 	public int getEmployeeId() {
 		return employeeId;
 	}
