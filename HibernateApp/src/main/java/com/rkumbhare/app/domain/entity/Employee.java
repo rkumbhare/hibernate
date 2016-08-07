@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +35,7 @@ public class Employee {
 	private String designation;
 	@Column(name = "level", nullable = true, length = 10)
 	private String level;
-	@OneToOne(mappedBy = "employee", cascade=CascadeType.ALL)
+	@OneToOne(mappedBy = "employee", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private EmployeeInfo employeeInfo;
 
 	public EmployeeInfo getEmployeeInfo() {

@@ -12,6 +12,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -41,12 +42,12 @@ public class EmployeeInfo {
 	@Column(name = "dob", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dob;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinColumn(name = "emp_id")
 	private Employee employee;
-	@OneToMany(mappedBy = "employeeInfo", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "employeeInfo", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<EmpAddress> addressList = new ArrayList<EmpAddress>();
-	@OneToMany(mappedBy="employeeInfo", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="employeeInfo", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<EmpContact> contactList = new ArrayList<EmpContact>();
 
 	public List<EmpContact> getContactList() {

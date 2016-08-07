@@ -67,6 +67,27 @@ public class Application2 {
 		session.getTransaction().commit();
 		
 		session.close();
+		
+		
+		session = sessionFactory.openSession();
+		Employee employee = (Employee) session.get(Employee.class, 1);
+		System.out.println(employee.getDoj());
+		System.out.println(employee.getEmployeeInfo().getDob());
+		System.out.println(employee.getEmployeeInfo().getAddressList());
+		System.out.println(employee.getEmployeeInfo().getContactList());
+		session.close();
+		
+		employee = null;
+		
+		session = sessionFactory.openSession();
+		employee = (Employee) session.load(Employee.class, 1);
+		System.out.println(employee.getDoj());
+		System.out.println(employee.getEmployeeInfo().getDob());
+		System.out.println(employee.getEmployeeInfo().getAddressList());
+		System.out.println(employee.getEmployeeInfo().getContactList());
+		session.close();
+		
+		
 		sessionFactory.close();
 	}
 
