@@ -26,19 +26,19 @@ public class Application2 {
 		Calendar calendar = Calendar.getInstance();
 		emp.setDoj(calendar.getTime());
 		emp.setDesignation("Software Engineer");
-		emp.setLevel("L3");
+		emp.setLevel("L1");
 		
 		EmployeeInfo employeeInfo = new EmployeeInfo();
-		employeeInfo.setFirstname("Rakesh");
-		employeeInfo.setLastname("k");
+		employeeInfo.setFirstname("Sushil");
+		employeeInfo.setLastname("P");
 		employeeInfo.setGender("Male");
 		Calendar calendar2 = Calendar.getInstance();
-		calendar2.set(1989, 7, 20);
+		calendar2.set(1985, 4, 11);
 		employeeInfo.setDob(calendar2.getTime());
 		employeeInfo.setEmployee(emp);
 		
 		EmpAddress adds1 = new EmpAddress();
-		adds1.setCity("Nagpur");
+		adds1.setCity("Badlapur");
 		adds1.setEmployeeInfo(employeeInfo);
 		
 		EmpAddress adds2 = new EmpAddress();
@@ -49,10 +49,10 @@ public class Application2 {
 		employeeInfo.getAddressList().add(adds2);
 		
 		EmpContact contact1 = new EmpContact();
-		contact1.setMobile("9809808984");
+		contact1.setMobile("998809878");
 		contact1.setEmployeeInfo(employeeInfo);
 		EmpContact contact2 = new EmpContact();
-		contact2.setMobile("0898909885");
+		contact2.setMobile("890989789");
 		contact2.setEmployeeInfo(employeeInfo);
 		
 		
