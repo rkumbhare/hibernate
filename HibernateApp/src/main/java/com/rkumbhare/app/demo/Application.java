@@ -3,7 +3,7 @@
  * @time Aug 6, 2016
  */
 
-package com.rkumbhare.app.domain.entity;
+package com.rkumbhare.app.demo;
 
 import java.util.Calendar;
 import java.util.List;
@@ -11,6 +11,11 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.classic.Session;
+
+import com.rkumbhare.app.domain.entity.Address;
+import com.rkumbhare.app.domain.entity.Contact;
+import com.rkumbhare.app.domain.entity.User;
+import com.rkumbhare.app.domain.entity.UserInfo;
 
 public class Application {
 
